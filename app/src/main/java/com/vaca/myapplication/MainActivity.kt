@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViewById<TextView>(R.id.fuck).setOnClickListener {
-            shutdown2()
+            shutdown_sys()
         }
 
     }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         try {
             chperm = Runtime.getRuntime().exec("su")
             val os = DataOutputStream(chperm.outputStream)
-            os.writeBytes("input keyevent 26\n")
+            os.writeBytes("reboot -p\n")
             os.flush()
             chperm.waitFor()
         } catch (e: IOException) {
