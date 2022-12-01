@@ -4,3 +4,9 @@ adb reboot recovery
 adb reboot bootloader
 adb reboot fastboot
 fastboot flash boot boot.img
+
+
+
+unlock bootloader :developer options->oem unlocking
+fastboot oem unlock
+fastboot reboot
